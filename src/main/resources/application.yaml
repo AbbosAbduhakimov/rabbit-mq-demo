@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/task_db
+    username: postgres
+    password: root
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+
+  rabbitmq:
+    queue1: create.queue
+    queue2: audit.queue
+    queue3: edit.queue
+    queue4: delete.queue
+    messageExchange: MessageExchange
+    transactionExchange: TransactionExchange
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+app:
+  message: Message has been successfully sent
+
+

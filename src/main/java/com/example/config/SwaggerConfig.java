@@ -1,4 +1,4 @@
-package com.example.other;
+package com.example.config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -15,9 +15,8 @@ import springfox.documentation.spring.web.plugins.Docket;
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-//                .apis(RequestHandlerSelectors.any())
-                .apis(RequestHandlerSelectors.basePackage("com.example"))
-                .paths(PathSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.example.controller"))
+                .paths(PathSelectors.regex("/.*"))
                 .build();
     }
 }
